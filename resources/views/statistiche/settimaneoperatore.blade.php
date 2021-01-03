@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 dark:text-white">
-            <h1>Statistiche Presenze Operatori</h1>
+        <div class="flex justify-content-between pt-8 sm:pt-0 dark:text-white">
+            <div>
+                <h1>Statistiche Presenze Operatori - {{$user->name}}</h1>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="{{route('statistiche')}}">Indietro</a>
+            </div>
         </div>
 
         <form action="{{route('visualizza_presenze_operatore')}}" method="POST">
@@ -18,13 +23,13 @@
                         @endforeach
                     </select>
                 </div>
-            </div>
+
 
             <div class="col-6 form-group">
                 <label for="operatore" class="text-white">Settimana</label>
                 <select required class="custom-select" name="settimana" id="settimana">
-                    @for($i=1; $i<=53; $i++)
-                        <option {{$i==$settimana?'selected':''}} value={{$i}}>Settimana {{$i}}</option>
+                    @for($i=1; $i<=count($settimane); $i++)
+                        <option {{$i==$settimana?'selected':''}} value={{$i}}>{{$settimane[$i]}}</option>
                     @endfor
                 </select>
             </div>
@@ -40,7 +45,7 @@
         </div>
     @endforeach
     <div class="alert alert-warning mt-2 flex justify-content-between align-items-center" role="alert">
-        Totale: {{$totale}}
+        Totale: {{$totale}} - Saldo ore: {{$user->oresaldo}}
     </div>
 
 @endsection

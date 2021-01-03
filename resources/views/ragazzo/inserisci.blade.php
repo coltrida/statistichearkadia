@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 dark:text-white">
-            <h1>Inserisci Ragazzo</h1>
+        <div class="flex justify-content-between pt-8 sm:pt-0 dark:text-white">
+            <div>
+                <h1>Inserisci Ragazzo</h1>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="{{route('home')}}">Indietro</a>
+            </div>
         </div>
 
         @if ($errors->any())
@@ -41,7 +46,7 @@
         </div>
 
         @foreach($ragazzi as $item)
-            <div class="alert alert-primary mt-2 flex justify-content-between" role="alert">
+            <div class="alert alert-primary mt-2 flex justify-content-between align-items-center" role="alert">
                 <div class="col-3">{{$item->name}}</div>
                 <div class="col-3">€ {{$item->voucher}}</div>
                 <div class="col-3">{{$item->scadenza}}</div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Presenze;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -46,21 +47,31 @@ class PresenzeController extends Controller
 
         $presenza->save();
 
+        $operatore = User::find(auth()->id());
+
         // recupero le presenze di una data settimana, di un dato user, di un dato anno
         $calcolaore = Presenze::where([
             ['settimana', $settimana],
-            ['user_id', auth()->id],
+            ['user_id', auth()->id()],
             ['anno', $d["year"]]
         ])->get();
 
-        // se il count è uguale a 1 vuol dire che ho cambiato settimana e devo calcolare le ore
+        // se il count è minore di 1 vuol dire che ho cambiato settimana e devo calcolare le ore considerando le ore settimanali
+        if (count($calcolaore) <= 1){
+            $operatore->oresaldo += ($operatore->oresettimanali - $request->ore);
+        } else {
+            $operatore->oresaldo -= $request->ore;
+        }
+        $operatore->save();
+
+        activity()->useLog('PresenzeOperatore')->log(auth()->user()->name." ha inserito la presenza per il giorno $giorno per $request->ore ore");
 
         return redirect()->back();
     }
 
     public function elimina(Presenze $presenze)
     {
-        //dd('ciao');
+        activity()->useLog('PresenzeOperatore')->log(auth()->user()->name." ha eliminato la presenza per il giorno $presenze->giorno per $presenze->ore ore");
         $res = $presenze->delete();
         return ''.$res;
     }

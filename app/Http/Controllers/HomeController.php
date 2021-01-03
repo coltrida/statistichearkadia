@@ -83,14 +83,17 @@ class HomeController extends Controller
             $client->save();
 
             $inserimento->save();
+
+            \activity()->useLog('PresenzeAttivita')->log(auth()->user()->name." ha inserito $client->name per il giorno $date per l'attivita' ".Activity::find($inserimento->activity_id)->name);
         }
         return redirect()->back();
     }
 
     public function elimina(AttivitaCliente $attivitaCliente)
     {
+        \activity()->useLog('PresenzeAttivita')->log(auth()->user()->name." ha eliminato ".$attivitaCliente->client->name. " per il giorno $attivitaCliente->giorno per l'attivita' ".Activity::find($attivitaCliente->activity_id)->name);
         $res = $attivitaCliente->delete();
-        return ''.$res;
+        return redirect()->back();
     }
 
     public function statistiche()
@@ -252,14 +255,36 @@ class HomeController extends Controller
     {
         $operatori = User::orderBy('name')->get();
         $settimanaAttuale = Carbon::now()->weekOfYear;
-        return view('statistiche.presenzeoperatori', compact('operatori', 'settimanaAttuale'));
+        $date = Carbon::now(); // or $date = new Carbon();
+        $annooggi = $date->format('Y') + 0;
+        $settimane = [];
+        $settimanafinale = Carbon::create($annooggi, 12, 31, 0, 0, 0, null)->weekOfYear;
+
+        for ($j = 1; $j <= $settimanafinale; $j++){
+            $date->setISODate($annooggi,$j);
+            $settimane[$j] = 'settimana:'.$j.' - dal: '.$date->startOfWeek()->format('d/m/Y');
+        }
+        //dd($settimane);
+        //$date->setISODate($annooggi,52); // 2016-10-17 23:59:59.000000
+        //echo $date->startOfWeek();
+        //  dd($settimane);
+
+        return view('statistiche.presenzeoperatori', compact('operatori', 'settimanaAttuale', 'settimane'));
     }
 
     public function visualizzapresenzeoperatore(Request $request)
     {
         $operatori = User::orderBy('name')->get();
         $user = User::find($request->operatore);
+        $date = Carbon::now(); // or $date = new Carbon();
         $annooggi = Carbon::now()->format('Y') + 0;
+        $settimane = [];
+        $settimanafinale = Carbon::create($annooggi, 12, 31, 0, 0, 0, null)->weekOfYear;
+
+        for ($j = 1; $j <= $settimanafinale; $j++){
+            $date->setISODate($annooggi,$j);
+            $settimane[$j] = 'settimana:'.$j.' - dal: '.$date->startOfWeek()->format('d/m/Y');
+        }
         //$meseoggi = Carbon::now()->format('m') + 0;
 
         /*$presenze = Presenze::with('user')
@@ -294,7 +319,13 @@ class HomeController extends Controller
         foreach ($presenze as $presenza){
             $totale = $totale + $presenza->ore;
         }
-        return view('statistiche.settimaneoperatore', compact('presenze', 'totale', 'operatori', 'settimana'));
+        return view('statistiche.settimaneoperatore', compact('presenze', 'user', 'totale', 'operatori', 'settimana', 'settimane'));
+    }
+
+    public function log()
+    {
+        $logs = \Spatie\Activitylog\Models\Activity::latest()->paginate(10);
+        return view('log.index', compact('logs'));
     }
 
 }

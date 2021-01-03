@@ -49,12 +49,18 @@ class TripController extends Controller
             $clienteviaggio->mese = $d["month"];
             $clienteviaggio->anno = $d["year"];
             $clienteviaggio->save();
+            activity()->useLog('InserisciKm')->log(auth()->user()->name." ha inserito un viaggio di $viaggio->kmPercorsi km con la vettura ".$viaggio->car->name." portando ".$clienteviaggio->ragazzi[0]->name);
         }
         return redirect()->back();
     }
 
     public function elimina(Trip $trip)
     {
+        $passeggeri = [];
+        foreach ($trip->clienttrip as $item){
+            array_push($passeggeri, $item->ragazzi[0]->name);
+        }
+        activity()->useLog('InserisciKm')->log(auth()->user()->name." ha eliminato il viaggio del giorno $trip->giorno con i passeggeri ".implode(",", $passeggeri));
         $res = $trip->delete();
         return ''.$res;
     }

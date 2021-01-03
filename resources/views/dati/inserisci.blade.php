@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 dark:text-white">
-            <h1>Inserisci Dati</h1>
+        <div class="flex justify-content-between pt-8 sm:pt-0 dark:text-white">
+            <div>
+                <h1>Inserisci Dati</h1>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="{{route('home')}}">Indietro</a>
+            </div>
         </div>
 
         <form action="{{route('inserisci_dati')}}" method="POST">
@@ -27,7 +32,10 @@
                             -webkit-overflow-scrolling: touch;">
                         @foreach($ragazzi as $ragazzo)
                             <li class="list-group-item">
-                                <input class="form-check-input ml-1" type="checkbox" name="raga[]" value="{{$ragazzo->id}}" id="{{"raga".$ragazzo->id}}">
+                                <input class="form-check-input ml-1" type="checkbox"
+                                       name="raga[]"
+                                       value="{{$ragazzo->id}}"
+                                       id="{{"raga".$ragazzo->id}}">
                                 <label class="form-check-label ml-4" for="defaultCheck1">
                                     {{$ragazzo->name}}
                                 </label>
@@ -61,24 +69,21 @@
             <div class="col">Nome</div>
             <div class="col">Giorno</div>
             <div class="col">Attività</div>
-            <div class="col">Quantita'</div>
-            <div class="col">Azioni</div>
+            <div class="col flex justify-content-center">Quantita'</div>
+            <div class="col flex justify-content-center">&nbsp;</div>
         </div>
 
         @foreach($items as $item)
-            <div class="alert alert-primary mt-2 container justify-content-between align-items-center pl-1" role="alert" id="ass{{$item->id}}">
-                <div class="row">
+            <div class="alert alert-primary mt-2 flex justify-content-between align-items-center pl-1" role="alert" id="ass{{$item->id}}">
                     <div class="col">{{$item->client->name}}</div>
                     <div class="col">{{$item->giorno}}</div>
                     <div class="col">{{$item->activity->name}}</div>
-                    <div class="col">{{$item->quantita}}</div>
-                    <div class="col azion">
-                        <a title="Elimina" href="{{route('elimina_dati', $item->id)}}" class="btn btn-danger mr-1" id="{{$item->id}}">
+                    <div class="col flex justify-content-center">{{$item->quantita}}</div>
+                    <div class="col flex justify-content-center">
+                        <a title="Elimina" href="{{route('elimina_dati', $item->id)}}" class="btn btn-danger" id="{{$item->id}}">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>
-                </div>
-
             </div>
         @endforeach
         <div class="alert alert-danger mt-2 flex justify-content-between" role="alert">

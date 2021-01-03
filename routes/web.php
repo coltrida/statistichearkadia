@@ -41,7 +41,7 @@ Route::post('/inseriscivettura', [CarController::class, 'inserisci'])->name('ins
 // --------------------- dati --------------------------
 Route::get('/inseriscidati', [HomeController::class, 'dati'])->name('dati');
 Route::post('/inseriscidati', [HomeController::class, 'inserisci'])->name('inserisci_dati');
-Route::delete('/eliminadati/{attivitaCliente}', [HomeController::class, 'elimina'])->name('elimina_dati');
+Route::get('/eliminadati/{attivitaCliente}', [HomeController::class, 'elimina'])->name('elimina_dati');
 
 // ---------------------- Operatori ----------------------
 Route::get('/inseriscipresenze', [PresenzeController::class, 'index'])->name('presenze');
@@ -53,6 +53,8 @@ Route::get('/inseriscichilometri', [TripController::class, 'index'])->name('chil
 Route::post('/inseriscichilometri', [TripController::class, 'inserisci'])->name('inserisci_chilometri');
 Route::delete('/eliminachilometri/{trip}', [TripController::class, 'elimina'])->name('elimina_chilometri');
 
+// --------------------- Log --------------------------
+Route::get('/log', [HomeController::class, 'log'])->name('log');
 
 // --------------------- statistiche --------------------------
 Route::get('/statistiche', [HomeController::class, 'statistiche'])->name('statistiche');

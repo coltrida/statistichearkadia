@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 dark:text-white">
-            <h1>Associa Operatore - Ore settimanali</h1>
+        <div class="flex justify-content-between pt-8 sm:pt-0 dark:text-white">
+            <div>
+                <h1>Associa Operatore - Ore settimanali</h1>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="{{route('associaindex')}}">Indietro</a>
+            </div>
         </div>
 
         <form action="{{route('eseguiassociaoperatoreore')}}" method="POST">

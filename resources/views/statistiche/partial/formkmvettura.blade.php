@@ -35,7 +35,7 @@
             <label for="anno" class="text-white">Anno</label>
             <select class="custom-select" name="anno" id="anno">
                 @for($i = 2020; $i <= $annooggi; $i++)
-                    <option value={{$i}}>{{$i}}</option>
+                    <option selected="{{ $i == $annooggi }}" value={{$i}}>{{$i}}</option>
                 @endfor
             </select>
         </div>

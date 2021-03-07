@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AttivitaRequest;
 use App\Models\Activity;
 use App\Models\Client;
+use App\Services\ActivityService;
 use Illuminate\Http\Request;
+use function redirect;
 
 class ActivityController extends Controller
 {
@@ -20,20 +22,20 @@ class ActivityController extends Controller
         return view('attivita.inserisci', compact('attivita'));
     }
 
-    public function inserisci(AttivitaRequest $request)
+    public function inserisci(AttivitaRequest $request, ActivityService $activityService)
     {
-        $attivita = new Activity();
-        $attivita->name =$request->nomeattivita;
-        $attivita->cost =$request->costo;
-        $attivita->tipo =$request->tipo;
-        $attivita->save();
-        return redirect()->back();
+        if (!$activityService->create($request->getDto())){
+            return redirect()->back()->withMessage('Errore di creazione attività');
+        }
+        return redirect()->back()->withMessage('Attività creata');
     }
 
-    public function elimina(Activity $activity)
+    public function elimina($id, ActivityService $activityService)
     {
-        $res = $activity->delete();
-        return ''.$res;
+        if (!$activityService->delete($id)){
+            return redirect()->route('attivita')->withMessage('Errore di eliminazione attività');
+        }
+        return redirect()->route('attivita')->withMessage('Attività eliminata');
     }
 
     public function attivitaragazzi(Activity $activity)

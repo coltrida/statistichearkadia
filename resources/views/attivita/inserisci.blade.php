@@ -61,7 +61,7 @@
                     <div class="col-3">{{$item->cost}}</div>
                     <div class="col-3">{{$item->tipo}}</div>
                     <div class="col-3 azion">
-                        <a title="Dissocia" href="{{route('elimina_attivita', $item->id)}}" class="btn btn-danger mr-1" id="{{$item->id}}">
+                        <a title="Elimina" href="{{route('elimina_attivita', $item->id)}}" class="btn btn-danger mr-1" id="{{$item->id}}">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>
@@ -71,6 +71,7 @@
     </div>
 
 @endsection
+{{--
 
 @section('footer')
     @parent
@@ -105,3 +106,6 @@
         });
     </script>
 @endsection
+
+--}}
+

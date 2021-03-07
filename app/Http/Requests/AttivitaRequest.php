@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Dto\ActivityCreateDto;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AttivitaRequest extends FormRequest
+final class AttivitaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,5 +34,14 @@ class AttivitaRequest extends FormRequest
             'nomeattivita.required' => 'Il nome dell\'attività è obbligatoria',
             'nomeattivita.unique' => 'Il nome dell\'attività deve essere univoca'
         ];
+    }
+
+    public function getDto() : ActivityCreateDto
+    {
+        return new ActivityCreateDto(
+            $this->get('nomeattivita'),
+            $this->get('costo'),
+            $this->get('tipo')
+        );
     }
 }

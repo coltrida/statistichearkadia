@@ -34,9 +34,9 @@
         <div>Costo Totale</div>
         <div>{{$totale}}</div>
     </div>
-    <div class="alert alert-warning flex justify-content-between" role="alert">
+    {{--<div class="alert alert-warning flex justify-content-between" role="alert">
         <div>Saldo Voucher</div>
         <div>{{$client->voucher}}</div>
-    </div>
+    </div>--}}
 
 @endsection

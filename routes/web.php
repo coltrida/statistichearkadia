@@ -16,7 +16,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // --------------------- attività --------------------------
 Route::get('/inserisciattivita', [ActivityController::class, 'index'])->name('attivita');
 Route::post('/inserisciattivita', [ActivityController::class, 'inserisci'])->name('inserisci_attivita');
-Route::delete('/eliminaattivita/{activity}', [ActivityController::class, 'elimina'])->name('elimina_attivita');
+Route::get('/eliminaattivita/{id}', [ActivityController::class, 'elimina'])->name('elimina_attivita');
 Route::get('/attivitaragazzi/{activity}', [ActivityController::class, 'attivitaragazzi'])->name('attivitaragazzi');
 
 // --------------------- associa --------------------------

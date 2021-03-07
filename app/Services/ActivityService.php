@@ -6,10 +6,14 @@ namespace App\Services;
 
 use App\Dto\ActivityCreateDto;
 use App\Models\Activity;
-use function dd;
 
 class ActivityService
 {
+    public function getAll()
+    {
+        return Activity::latest()->get();
+    }
+
     public function create(ActivityCreateDto $request) : bool
     {
         $attivita = new Activity();
@@ -22,12 +26,12 @@ class ActivityService
         return true;
     }
 
-    public function delete($id) : bool
+    public function delete(int $id) : bool
     {
         $attivita = Activity::find($id);
         if(!$attivita->delete()){
             return false;
-        }
+    }
         return true;
     }
 }

@@ -45,7 +45,7 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block">Inserisci</button>
         </form>
 
-        <div class="alert alert-danger mt-5 flex justify-content-between p-0" role="alert">
+        <div class="alert alert-danger mt-5 flex justify-content-between p-2" role="alert">
 
                 <div class="col-3">Attività</div>
                 <div class="col-3">Costo</div>

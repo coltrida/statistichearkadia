@@ -16,9 +16,9 @@ class ActivityController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(ActivityService $activityService)
     {
-        $attivita = Activity::latest()->get();
+        $attivita = $activityService->getAll();
         return view('attivita.inserisci', compact('attivita'));
     }
 
@@ -40,7 +40,6 @@ class ActivityController extends Controller
 
     public function attivitaragazzi(Activity $activity)
     {
-        //dd($activity->clientsAssocia->toArray());
          return $activity->clientsAssocia->toArray();
     }
 }

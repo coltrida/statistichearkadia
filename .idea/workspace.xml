@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="58d740cb-1f2f-4c1a-8bd9-e581c1832889" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Homestead.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Homestead.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statistichearkadia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistichearkadia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AttivitaRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AttivitaRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/attivita/associa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attivita/associa.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ActivityService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ActivityService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/attivita/inserisci.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attivita/inserisci.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home3.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-laravel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-laravel.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-sulu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-sulu.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve.sh" afterDir="false" />
@@ -198,7 +187,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../livewireticket" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -313,7 +302,7 @@
       <workItem from="1614530529862" duration="401000" />
       <workItem from="1614531938954" duration="1356000" />
       <workItem from="1614631350699" duration="374000" />
-      <workItem from="1615127173937" duration="8529000" />
+      <workItem from="1615127173937" duration="9412000" />
     </task>
     <servers />
   </component>
@@ -339,10 +328,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1615128524651" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1614156983986">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1615151711943">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1614156983986" />
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1615151711943" />
     <state x="339" y="183" key="NewPhpClassDialog" timestamp="1615128130951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

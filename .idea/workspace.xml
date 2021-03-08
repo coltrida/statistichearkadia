@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="58d740cb-1f2f-4c1a-8bd9-e581c1832889" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Homestead.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Homestead.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/statistichearkadia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistichearkadia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ActivityService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ActivityService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/attivita/inserisci.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attivita/inserisci.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-laravel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-laravel.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-sulu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-sulu.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve.sh" afterDir="false" />
@@ -172,6 +176,7 @@
       <path value="$PROJECT_DIR$/vendor/haruncpi/laravel-user-activity" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-activitylog" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oqa5B3cLYHoiMlxG91Tr5xcuux" />
@@ -195,14 +200,15 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\resources\views\attivita" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\chilometri" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\vettura" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\statistiche" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\ragazzo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -302,7 +308,8 @@
       <workItem from="1614530529862" duration="401000" />
       <workItem from="1614531938954" duration="1356000" />
       <workItem from="1614631350699" duration="374000" />
-      <workItem from="1615127173937" duration="9412000" />
+      <workItem from="1615127173937" duration="12432000" />
+      <workItem from="1615195817415" duration="3979000" />
     </task>
     <servers />
   </component>
@@ -328,10 +335,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1615128524651" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1615151711943">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1615196611763">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1615151711943" />
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1615196611763" />
     <state x="339" y="183" key="NewPhpClassDialog" timestamp="1615128130951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

@@ -16,6 +16,7 @@
         "laravel/framework": "^8.0",
         "laravel/passport": "^10.0",
         "laravel/tinker": "^2.0",
+        "livewire/livewire": "^2.4",
         "spatie/laravel-activitylog": "^3.16"
     },
     "require-dev": {

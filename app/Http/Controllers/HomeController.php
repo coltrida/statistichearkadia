@@ -12,6 +12,7 @@ use App\Models\Trip;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function dd;
 
 class HomeController extends Controller
 {
@@ -93,7 +94,7 @@ class HomeController extends Controller
     {
         \activity()->useLog('PresenzeAttivita')->log(auth()->user()->name." ha eliminato ".$attivitaCliente->client->name. " per il giorno $attivitaCliente->giorno per l'attivita' ".Activity::find($attivitaCliente->activity_id)->name);
         $res = $attivitaCliente->delete();
-        return redirect()->back();
+        return 1;
     }
 
     public function statistiche()
@@ -143,7 +144,7 @@ class HomeController extends Controller
                 }
             }
         }
-
+//dd($items);
         return view('statistiche.visualizza', compact('ragazzi', 'client', 'items', 'annooggi', 'totale', 'nome', 'mese', 'anno'));
     }
 

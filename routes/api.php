@@ -56,6 +56,7 @@ Route::delete('/chilometri/{trip}', [TripController::class, 'elimina']);
 
 /*--------------- Operatori -----------------*/
 Route::get('/operatori', [UserController::class, 'index']);
+Route::post('/operatori/associaOre', [UserController::class, 'eseguiassociaoperatoreore']);
 
 /*--------------- Statistiche -----------------*/
 Route::post('/statistiche/presenzeRagazzi', [StatisticheController::class, 'presenzeRagazzi']);
@@ -65,4 +66,7 @@ Route::post('/statistiche/chilometriRagazzi', [StatisticheController::class, 'ch
 Route::get('/statistiche/settimanaAttuale', [StatisticheController::class, 'getSettimanaAttuale']);
 Route::get('/statistiche/meseAttuale', [StatisticheController::class, 'getMeseAttuale']);
 Route::get('/statistiche/annoAttuale', [StatisticheController::class, 'getAnnoAttuale']);
+Route::get('/statistiche/listaSettimane', [StatisticheController::class, 'listaSettimane']);
 
+/*--------------- logs -----------------*/
+Route::get('/logs', [UserController::class, 'logs']);

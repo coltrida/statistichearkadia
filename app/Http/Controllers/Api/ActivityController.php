@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ActivityClientResource;
 use App\Http\Resources\ActivityResource;
+use App\Http\Resources\AssociazioniActivityClientResource;
 use App\Models\Activity;
 use App\Models\Associa;
 use App\Models\AttivitaCliente;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use function array_push;
 
 class ActivityController extends Controller
 {
@@ -36,7 +38,7 @@ class ActivityController extends Controller
 
     public function attivitaCliente()
     {
-        $items = AttivitaCliente::with('client', 'activity')->latest()->get();
+        $items = AttivitaCliente::with('client', 'activity')->latest()->take(100)->get();
         return ActivityClientResource::collection($items);
     }
 
@@ -53,6 +55,8 @@ class ActivityController extends Controller
         $mese = $d["month"];
         $anno = $d["year"];
 
+        $elementiInseriti = [];
+
         foreach ($request->raga as $ragazzo){
 
             $inserimento = new AttivitaCliente();
@@ -67,26 +71,29 @@ class ActivityController extends Controller
             $inserimento->note = $request->note;
 
             $inserimento->save();
+            array_push($elementiInseriti, $inserimento);
         }
-        return 1;
+        return ActivityClientResource::collection(collect($elementiInseriti));
     }
 
     public function associa(Request $request)
     {
         $numeroragazzi = count($request->raga);
+        $associazioniInserite = [];
         for ($i=0; $i < $numeroragazzi; $i++){
             $associa = new Associa();
             $associa->activity_id = $request->attivita;
             $associa->client_id = $request->raga[$i];
             $associa->save();
+            array_push($associazioniInserite, new AssociazioniActivityClientResource($associa));
         }
-        return 1;
+        return $associazioniInserite;
     }
 
     public function associazioni()
     {
         $associazioni = Associa::with('client', 'activity')->orderBy('activity_id')->get();
-        return $associazioni;
+        return AssociazioniActivityClientResource::collection($associazioni);
     }
 
     public function dissocia(Associa $associa)

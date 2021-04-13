@@ -5,19 +5,17 @@
       <change beforePath="$PROJECT_DIR$/../Homestead.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Homestead.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/statistichearkadia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistichearkadia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StatisticheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/StatisticheController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TripController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TripController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AttivitaRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AttivitaRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/attivita/associa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attivita/associa.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/attivita/inserisci.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attivita/inserisci.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home3.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/StatistichePresenzeRagazziResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/StatistichePresenzeRagazziResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dati/inserisci.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dati/inserisci.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-laravel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-laravel.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-sulu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-sulu.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve.sh" afterDir="false" />
@@ -183,6 +181,7 @@
       <path value="$PROJECT_DIR$/vendor/haruncpi/laravel-user-activity" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-activitylog" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oqa5B3cLYHoiMlxG91Tr5xcuux" />
@@ -314,6 +313,30 @@
       <workItem from="1614531938954" duration="1356000" />
       <workItem from="1614631350699" duration="374000" />
       <workItem from="1615127173937" duration="8529000" />
+      <workItem from="1615221735138" duration="17000" />
+      <workItem from="1616060248325" duration="6502000" />
+      <workItem from="1616079485111" duration="38000" />
+      <workItem from="1616664014676" duration="1917000" />
+      <workItem from="1616704443128" duration="3132000" />
+      <workItem from="1616754769604" duration="11964000" />
+      <workItem from="1616839007322" duration="18669000" />
+      <workItem from="1616936895689" duration="7683000" />
+      <workItem from="1617141114518" duration="951000" />
+      <workItem from="1617217704399" duration="657000" />
+      <workItem from="1617303939790" duration="2257000" />
+      <workItem from="1617489299598" duration="804000" />
+      <workItem from="1617525156373" duration="4145000" />
+      <workItem from="1617616658069" duration="2634000" />
+      <workItem from="1617709993100" duration="2680000" />
+      <workItem from="1617715715455" duration="490000" />
+      <workItem from="1617814842995" duration="1420000" />
+      <workItem from="1617831718659" duration="653000" />
+      <workItem from="1618049147272" duration="515000" />
+      <workItem from="1618088536343" duration="3334000" />
+      <workItem from="1618136138550" duration="43000" />
+      <workItem from="1618226108518" duration="7735000" />
+      <workItem from="1618342586663" duration="32000" />
+      <workItem from="1618342900502" duration="860000" />
     </task>
     <servers />
   </component>
@@ -339,10 +362,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1615128524651" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1614156983986">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1618342623560">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1614156983986" />
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1618342623560" />
     <state x="339" y="183" key="NewPhpClassDialog" timestamp="1615128130951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

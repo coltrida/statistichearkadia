@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\LogResource;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use function compact;
+use function redirect;
+use function view;
 
 class UserController extends Controller
 {
@@ -13,5 +17,19 @@ class UserController extends Controller
     {
         $user = User::OrderBy('name')->get();
         return UserResource::collection($user);
+    }
+
+    public function eseguiassociaoperatoreore(Request $request)
+    {
+        $user = User::find($request->operatore);
+        $user->oresettimanali = $request->ore;
+        $user->save();
+        return $user;
+    }
+
+    public function logs()
+    {
+        $logs = \Spatie\Activitylog\Models\Activity::latest()->take(200)->get();
+        return LogResource::collection($logs);
     }
 }

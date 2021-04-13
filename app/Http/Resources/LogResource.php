@@ -2,9 +2,10 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Client;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class LogResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +16,8 @@ class UserResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'oresettimanali' => $this->oresettimanali,
-            'oresaldo' => $this->oresaldo,
+            'description' => $this->description,
+            'giorno' => $this->created_at->format('d/m/y'),
         ];
     }
 }

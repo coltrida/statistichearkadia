@@ -13,7 +13,7 @@ class TripController extends Controller
 {
     public function index()
     {
-        $items = Trip::with('user', 'car', 'clienttrip')->latest()->get();
+        $items = Trip::with('user', 'car', 'clienttrip')->latest()->take(100)->get();
         return TripResource::collection($items);
     }
 

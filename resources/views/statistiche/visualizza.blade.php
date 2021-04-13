@@ -19,12 +19,18 @@
             <div class="col">Attività</div>
             <div class="col">Giorno</div>
             <div class="col">Quantita'</div>
+            <div class="col"></div>
         </div>
         @foreach($item as $ele)
-            <div class="alert alert-primary mt-2 flex justify-content-between" role="alert">
+            <div class="alert alert-primary mt-2 flex justify-content-between" role="alert" id="ass{{$ele->id}}">
                 <div class="col">{{$ele->activity->name}}</div>
                 <div class="col">{{$ele->giorno}}</div>
                 <div class="col">{{$ele->quantita}}</div>
+                <div class="col">
+                    <a title="Elimina" href="{{route('elimina_dati', $ele->id)}}" class="btn btn-danger" id="{{$ele->id}}">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
 
             </div>
         @endforeach
@@ -39,4 +45,37 @@
         <div>{{$client->voucher}}</div>
     </div>--}}
 
+@endsection
+
+@section('footer')
+    @parent
+    <script>
+        $('document').ready(function () {
+
+            /*-------------- Elimina attivita cliente ----------------*/
+            $('a.btn-danger').on('click', function (ele) {  //è consigliato mettere il listener su ul e non sui li
+                ele.preventDefault();
+                var url = ($(this).attr('href'));  //QUESTO è UN ALTRO MODO PER CATTURARE IL LINK (con jQuery)
+                var id = 'ass'+($(this).attr('id'));
+                //alert(url);
+                $.ajax(url,
+                    {
+                        data : {
+                            '_token' : $('#_token').val()
+                        },
+                        complete : function (resp) {
+                            console.log(resp);        //COSì POSSIAMO VEDERE IL VALORE ( = 1) NELLA CONSOLE DEL BROWSER
+                            if(resp.responseText == 1){
+                                //alert(resp.responseText);
+                                $( "#"+id ).remove();
+                            }else{
+                                alert('problemi');
+                            }
+                        }
+                    })
+            })
+
+
+        });
+    </script>
 @endsection

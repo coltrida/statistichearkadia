@@ -14,6 +14,8 @@ use App\Models\Trip;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function compact;
+use function view;
 
 class StatisticheController extends Controller
 {
@@ -52,7 +54,7 @@ class StatisticheController extends Controller
 
 
         $valori = AttivitaCliente::with('activity', 'client')
-            ->orderBy('giorno')
+            ->orderBy('activity_id')
             ->where([
                 ['client_id', $ragazzo],
                 ['anno', $anno],
@@ -60,7 +62,9 @@ class StatisticheController extends Controller
             ])
             ->get();
 
-        return [StatistichePresenzeRagazziResource::collection($valori)->collection->groupBy('attivita'), $totale];
+        //return [StatistichePresenzeRagazziResource::collection($valori)->collection->groupBy('attivita'), $totale];
+        return [$items, $totale, $nome];
+        /*return [StatistichePresenzeRagazziResource::collection($valori), $totale, $nome];*/
         //return $items;
     }
 
@@ -81,7 +85,25 @@ class StatisticheController extends Controller
             $totale = $totale + $presenza->ore;
         }
 
-        return [$presenze, $totale];
+        $oreSaldo = User::find($request->user)->oresaldo;
+
+        return [$presenze, $totale, $oreSaldo];
+    }
+
+    public function listaSettimane()
+    {
+        $settimanaAttuale = Carbon::now()->weekOfYear;
+        $date = Carbon::now(); // or $date = new Carbon();
+        $annooggi = $date->format('Y') + 0;
+        $settimane = [];
+        $settimanafinale = Carbon::create($annooggi, 12, 31, 0, 0, 0, null)->weekOfYear;
+
+        for ($j = 1; $j <= $settimanafinale; $j++){
+            $date->setISODate($annooggi,$j);
+            $settimane[$j] = $j.' - dal:'.$date->startOfWeek()->format('d/m/Y');
+        }
+
+        return [$settimane, $settimanaAttuale];
     }
 
     public function getSettimanaAttuale()

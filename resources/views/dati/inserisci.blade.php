@@ -134,15 +134,13 @@
             });
 
             /*-------------- Elimina attivita cliente ----------------*/
-            $('.azion').on('click', 'a.btn-danger', function (ele) {  //è consigliato mettere il listener su ul e non sui li
+            $('a.btn-danger').on('click', function (ele) {  //è consigliato mettere il listener su ul e non sui li
                 ele.preventDefault();
-
                 var url = ($(this).attr('href'));  //QUESTO è UN ALTRO MODO PER CATTURARE IL LINK (con jQuery)
                 var id = 'ass'+($(this).attr('id'));
-                // alert(li);
+                 //alert(url);
                 $.ajax(url,
                     {
-                        method: 'DELETE',
                         data : {
                             '_token' : $('#_token').val()
                         },

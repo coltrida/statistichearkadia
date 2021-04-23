@@ -14,8 +14,10 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "haruncpi/laravel-user-activity": "^1.0",
         "laravel/framework": "^8.0",
+        "laravel/nexmo-notification-channel": "^2.5",
         "laravel/passport": "^10.0",
         "laravel/tinker": "^2.0",
+        "nexmo/laravel": "^2.4",
         "spatie/laravel-activitylog": "^3.16"
     },
     "require-dev": {

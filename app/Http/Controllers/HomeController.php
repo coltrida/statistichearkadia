@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Services\AgricolturaService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Nexmo\Laravel\Facade\Nexmo;
 use function compact;
 use function dd;
 use function redirect;
@@ -396,6 +397,15 @@ class HomeController extends Controller
     {
         Agricoltura::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function sendsms()
+    {
+        Nexmo::message()->send([
+            'to' => '+393923126074',
+            'from' => '+393920222125',
+            'text' => 'Marco Pirla!'
+        ]);
     }
 
 }

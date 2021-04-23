@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="58d740cb-1f2f-4c1a-8bd9-e581c1832889" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Homestead.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Homestead.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/statistichearkadia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistichearkadia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/settimaneoperatore.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/settimaneoperatore.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-laravel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-laravel.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-sulu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-sulu.sh" afterDir="false" />
@@ -177,7 +177,13 @@
       <path value="$PROJECT_DIR$/vendor/haruncpi/laravel-user-activity" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-activitylog" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
-      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/vonage/client" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/vonage/nexmo-bridge" />
+      <path value="$PROJECT_DIR$/vendor/vonage/client-core" />
+      <path value="$PROJECT_DIR$/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/laravel" />
     </include_path>
   </component>
   <component name="ProjectId" id="1oqa5B3cLYHoiMlxG91Tr5xcuux" />
@@ -193,7 +199,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/sms" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -206,6 +212,7 @@
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\resources\views\sms" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\chilometri" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\vettura" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\statistiche" />
@@ -339,7 +346,7 @@
       <workItem from="1618583708692" duration="34000" />
       <workItem from="1618682724185" duration="663000" />
       <workItem from="1618756335974" duration="1575000" />
-      <workItem from="1619088541131" duration="51348000" />
+      <workItem from="1619088541131" duration="53307000" />
     </task>
     <servers />
   </component>

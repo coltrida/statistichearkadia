@@ -73,3 +73,5 @@ Route::get('/eliminaagricoltura/{id}', [HomeController::class, 'eliminaagricola'
 
 Route::get('/calcoloSaldoOre', [HomeController::class, 'calcoloSaldoOre'])->name('calcoloSaldoOre');
 Route::get('/presenzecalcolo', [HomeController::class, 'presenzecalcolo'])->name('presenzecalcolo');
+
+Route::get('/sendsms', [HomeController::class, 'sendsms'])->name('sendsms');

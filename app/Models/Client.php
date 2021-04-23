@@ -15,4 +15,9 @@ class Client extends Model
     {
         return $this->belongsToMany(Activity::class, 'activities_clients', 'client_id', 'id');
     }
+
+    public function agricoltura()
+    {
+        return $this->hasMany(Agricoltura::class, 'user_id', 'id');
+    }
 }

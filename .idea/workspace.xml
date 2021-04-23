@@ -3,19 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="58d740cb-1f2f-4c1a-8bd9-e581c1832889" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Homestead.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Homestead.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statistichearkadia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistichearkadia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StatisticheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/StatisticheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TripController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TripController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/StatistichePresenzeRagazziResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/StatistichePresenzeRagazziResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dati/inserisci.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dati/inserisci.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/settimaneoperatore.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/settimaneoperatore.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-laravel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-laravel.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve-sulu.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve-sulu.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scripts/serve.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/serve.sh" afterDir="false" />
@@ -34,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="blade" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -202,17 +198,18 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\public\css" />
+      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\chilometri" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\vettura" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\statistiche" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\ragazzo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -337,6 +334,12 @@
       <workItem from="1618226108518" duration="7735000" />
       <workItem from="1618342586663" duration="32000" />
       <workItem from="1618342900502" duration="860000" />
+      <workItem from="1618422097101" duration="4261000" />
+      <workItem from="1618483316446" duration="5554000" />
+      <workItem from="1618583708692" duration="34000" />
+      <workItem from="1618682724185" duration="663000" />
+      <workItem from="1618756335974" duration="1575000" />
+      <workItem from="1619088541131" duration="51348000" />
     </task>
     <servers />
   </component>
@@ -362,21 +365,29 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1615128524651" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1618342623560">
+    <state x="317" y="147" key="EditFileWatcherDialog" timestamp="1619117111493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1618342623560" />
-    <state x="339" y="183" key="NewPhpClassDialog" timestamp="1615128130951">
+    <state x="317" y="147" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1619117111493" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1618758720443">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="183" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1615128130951" />
-    <state x="184" y="11" key="SettingsEditor" timestamp="1615128656633">
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1618758720443" />
+    <state x="339" y="183" key="NewPhpClassDialog" timestamp="1619128021449">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1615128656633" />
+    <state x="339" y="183" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1619128021449" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1619117092133">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1619117092133" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1614016400370">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1614016400370" />
+    <state x="379" y="101" width="607" height="536" key="find.popup" timestamp="1618487197932">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="379" y="101" width="607" height="536" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1618487197932" />
   </component>
 </project>

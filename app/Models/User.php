@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function presenze()
     {
-        return $this->hasMany(Presenze::class, 'id', 'user_id');
+        return $this->hasMany(Presenze::class, 'user_id', 'id');
     }
 }

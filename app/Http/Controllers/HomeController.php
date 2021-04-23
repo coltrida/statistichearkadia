@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Agricoltura;
 use App\Models\AttivitaCliente;
 use App\Models\Car;
 use App\Models\Client;
@@ -10,9 +11,13 @@ use App\Models\ClientTrip;
 use App\Models\Presenze;
 use App\Models\Trip;
 use App\Models\User;
+use App\Services\AgricolturaService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function compact;
 use function dd;
+use function redirect;
+use function view;
 
 class HomeController extends Controller
 {
@@ -31,9 +36,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function inizio()
+    {
+        $giorno = Carbon::now()->firstOfMonth();
+        return view('home', compact('giorno'));
+    }
+
     public function index()
     {
-        return view('home');
+        $giorno = Carbon::now()->firstOfMonth();
+        return view('home', compact('giorno'));
     }
 
     public function dati()
@@ -265,10 +277,6 @@ class HomeController extends Controller
             $date->setISODate($annooggi,$j);
             $settimane[$j] = 'settimana:'.$j.' - dal: '.$date->startOfWeek()->format('d/m/Y');
         }
-        //dd($settimane);
-        //$date->setISODate($annooggi,52); // 2016-10-17 23:59:59.000000
-        //echo $date->startOfWeek();
-        //  dd($settimane);
 
         return view('statistiche.presenzeoperatori', compact('operatori', 'settimanaAttuale', 'settimane'));
     }
@@ -286,26 +294,6 @@ class HomeController extends Controller
             $date->setISODate($annooggi,$j);
             $settimane[$j] = 'settimana:'.$j.' - dal: '.$date->startOfWeek()->format('d/m/Y');
         }
-        //$meseoggi = Carbon::now()->format('m') + 0;
-
-        /*$presenze = Presenze::with('user')
-            ->orderBy('settimana')
-            ->where([
-                ['user_id', $user->id],
-                ['anno', $annooggi],
-                ['mese', $meseoggi],
-            ])
-            ->get();
-        $settimane = $presenze->groupBy('settimana');
-        //dd($settimane);
-        foreach ($settimane as $settimana){
-            $totale = 0;
-            foreach ($settimana as $item){
-                $totale = $totale + $item->ore;
-            }
-            $settimane[$item->settimana] = $totale;
-        }*/
-        //dd($settimane);
 
         $settimana = $request->settimana;
 
@@ -327,6 +315,87 @@ class HomeController extends Controller
     {
         $logs = \Spatie\Activitylog\Models\Activity::latest()->paginate(10);
         return view('log.index', compact('logs'));
+    }
+
+    public function calcoloSaldoOre()
+    {
+        $settimanaAttuale = Carbon::now()->weekOfYear;
+        $operatori = User::with('presenze')->get();
+        foreach ($operatori as $operatore)
+        {
+            if($operatore->oresettimanali)
+            {
+                $totaleOreAttese = $settimanaAttuale * $operatore->oresettimanali;
+                $totaleOreLavorate = 0;
+                foreach ($operatore->presenze as $presenza)
+                {
+                    $totaleOreLavorate += $presenza->ore;
+                }
+                $operatore->oresaldo = $totaleOreAttese - $totaleOreLavorate;
+                $operatore->save();
+            }
+        }
+    }
+
+    public function presenzecalcolo()
+    {
+        $settimanaAttuale = Carbon::now()->weekOfYear;
+        $operatore = User::with('presenze')->where('name', 'Costantino Mugnai')->first();
+//dd($operatore);
+            if($operatore->oresettimanali)
+            {
+                $totaleOreAttese = $settimanaAttuale * $operatore->oresettimanali;
+                //dd($totaleOreAttese);
+                //dd("$totaleOreAttese - $settimanaAttuale - $operatore->oresettimanali");
+                $totaleOreLavorate = 0;
+                foreach ($operatore->presenze as $presenza)
+                {
+                    $totaleOreLavorate += $presenza->ore;
+                }
+                //dd($totaleOreLavorate);
+                $operatore->oresaldo = $totaleOreAttese - $totaleOreLavorate;
+                $operatore->save();
+                dd('saldo: '.$operatore->oresaldo.' ore fatte:'.$totaleOreLavorate.' ore che doveva fare:'.$totaleOreAttese);
+            }
+
+    }
+
+    public function agricoltura($giorno, AgricolturaService $agricolturaService, $id='')
+    {
+        $persone = $agricolturaService->getPersone();
+        setlocale(LC_TIME, 'it_IT');
+        Carbon::setLocale('it');
+        $mese = $agricolturaService->nomeDelMese($giorno);
+        $successivo = Carbon::make($giorno)->addMonth();
+        $precedente = Carbon::make($giorno)->subMonth();
+        $giornoInizioSecondaSettimana = Carbon::make($giorno)->firstOfMonth()->endOfWeek()->day + 1;
+        $mesenumero = $agricolturaService->numeroDelMese($giorno);
+
+        $utente = $id ? $utente = Client::with(['agricoltura' => function ($query) use($mesenumero) {
+                $query->where('mese', $mesenumero);
+            }])->find($id) : null;
+
+        $totaleSettimaneLavorate = $id ? $utente->agricoltura->where('tipo', 'P')->groupBy('settimana')->count() : null;
+
+        $anno = $agricolturaService->anno($giorno);
+        $nrsettimane = $agricolturaService->numeroSettimaneNelMese($giorno);
+        $numero = $agricolturaService->posizionePrimoGiornoDelMese($giorno);
+        $numerodispazi = $numero == 0 ? 7 : $numero;
+        $settimana = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica'];
+        $lastDay = $agricolturaService->ultimoGiornoDelMese($giorno);
+        return view('agricoltura.index2', compact('settimana', 'totaleSettimaneLavorate', 'giornoInizioSecondaSettimana', 'numerodispazi', 'mese', 'lastDay', 'nrsettimane', 'persone', 'mesenumero', 'anno', 'successivo', 'precedente', 'giorno', 'utente'));
+    }
+
+    public function postagricoltura(Request $request, AgricolturaService $agricolturaService)
+    {
+        $agricolturaService->salvaPresenze($request);
+        return redirect()->route('agricoltura', ['giorno' => $request->giorno, 'id' => $request->persona]);
+    }
+
+    public function eliminaagricola($id)
+    {
+        Agricoltura::find($id)->delete();
+        return redirect()->back();
     }
 
 }

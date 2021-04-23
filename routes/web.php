@@ -9,7 +9,7 @@ use App\Http\Controllers\PresenzeController;
 use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () { return view('home'); });
+Route::get('/', [HomeController::class, 'inizio'])->name('inizio');
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -66,3 +66,10 @@ Route::post('/visualizzachilometrivetture', [HomeController::class, 'visualizzac
 Route::post('/visualizzachilometriragazzi', [HomeController::class, 'visualizzachilometriragazzi'])->name('visualizza_chilometri_ragazzi');
 Route::get('/statistichechilometrivetture', [HomeController::class, 'chilometrivetture'])->name('statistiche_chilometri_vetture');
 Route::get('/statistichechilometriragazzi', [HomeController::class, 'chilometriragazzi'])->name('statistiche_chilometri_ragazzi');
+
+Route::get('/agricoltura/{giorno}/{id?}', [HomeController::class, 'agricoltura'])->name('agricoltura');
+Route::post('/agricoltura', [HomeController::class, 'postagricoltura'])->name('postagricoltura');
+Route::get('/eliminaagricoltura/{id}', [HomeController::class, 'eliminaagricola'])->name('eliminaagricola');
+
+Route::get('/calcoloSaldoOre', [HomeController::class, 'calcoloSaldoOre'])->name('calcoloSaldoOre');
+Route::get('/presenzecalcolo', [HomeController::class, 'presenzecalcolo'])->name('presenzecalcolo');

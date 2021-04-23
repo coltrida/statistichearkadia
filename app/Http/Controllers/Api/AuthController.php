@@ -15,6 +15,9 @@ class AuthController extends Controller
             ['email', $request->email]
         ])->first();
 
+        /*if (Hash::check($request->password, $user->password)) {
+            return $user;
+        }*/
         return $user;
     }
 

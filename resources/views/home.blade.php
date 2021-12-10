@@ -3,8 +3,28 @@
 @section('content')
     @auth()
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 dark:text-white">
-            <h1>Arkadia Onlus</h1>
+        <div class="row pt-8 sm:justify-start sm:pt-0 dark:text-white">
+            <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12">
+                <h1>Arkadia Onlus</h1>
+            </div>
+            <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12 bg-success p-4">
+                <div class="h3" style="display: flex; justify-content: center">Prima Nota</div>
+                <div class="row">
+                    <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12">
+                        <a class="btn btn-primary btn-block shadow" href="{{route('inserisci_entrata')}}">Entrate</a>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12">
+                        <a class="btn btn-warning btn-block shadow" href="{{route('inserisci_uscita')}}">Uscite</a>
+                    </div>
+                    @if(auth()->user()->isAdmin())
+                        <div class="col">
+                            <a class="btn btn-danger btn-block shadow" href="{{route('saldo_mese', 0)}}">Mese</a>
+                        </div>
+                    @endif
+                </div>
+
+            </div>
+
         </div>
 
 {{--        @auth()--}}
@@ -199,8 +219,8 @@
                                     <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{route('sendsms')}}" class="text-gray-900">
-                                        Invia sms
+                                    <a href="{{route('calcoloSaldoOre')}}" class="text-gray-900">
+                                        Aggiorna DataBase
                                     </a>
                                 </div>
                             </div>

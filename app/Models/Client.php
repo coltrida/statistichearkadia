@@ -20,4 +20,9 @@ class Client extends Model
     {
         return $this->hasMany(Agricoltura::class, 'user_id', 'id');
     }
+
+    public function costi()
+    {
+        return $this->hasMany(Costoragazzo::class);
+    }
 }

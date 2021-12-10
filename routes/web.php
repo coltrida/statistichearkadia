@@ -4,8 +4,10 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AssociaController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CostoragazzoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresenzeController;
+use App\Http\Controllers\PrimanotaController;
 use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +58,14 @@ Route::delete('/eliminachilometri/{trip}', [TripController::class, 'elimina'])->
 // --------------------- Log --------------------------
 Route::get('/log', [HomeController::class, 'log'])->name('log');
 
+// --------------------- Prima Nota --------------------------
+Route::get('/inserisciUscita', [PrimanotaController::class, 'uscita'])->name('uscita');
+Route::post('/inserisciUscita', [PrimanotaController::class, 'inserisciUscita'])->name('inserisci_uscita');
+Route::get('/inserisciEntrata', [PrimanotaController::class, 'entrata'])->name('entrata');
+Route::post('/inserisciEntrata', [PrimanotaController::class, 'inserisciEntrata'])->name('inserisci_entrata');
+Route::get('/saldoMese/{direzione}', [PrimanotaController::class, 'saldoMese'])->name('saldo_mese');
+Route::get('/ricevuta/{primanota}', [PrimanotaController::class, 'ricevuta'])->name('ricevuta');
+
 // --------------------- statistiche --------------------------
 Route::get('/statistiche', [HomeController::class, 'statistiche'])->name('statistiche');
 Route::get('/statistichepresenze', [HomeController::class, 'presenze'])->name('statistiche_presenze');
@@ -66,6 +76,7 @@ Route::post('/visualizzachilometrivetture', [HomeController::class, 'visualizzac
 Route::post('/visualizzachilometriragazzi', [HomeController::class, 'visualizzachilometriragazzi'])->name('visualizza_chilometri_ragazzi');
 Route::get('/statistichechilometrivetture', [HomeController::class, 'chilometrivetture'])->name('statistiche_chilometri_vetture');
 Route::get('/statistichechilometriragazzi', [HomeController::class, 'chilometriragazzi'])->name('statistiche_chilometri_ragazzi');
+Route::get('/costiRagazzi', [CostoragazzoController::class, 'lista'])->name('costi_ragazzi');
 
 Route::get('/agricoltura/{giorno}/{id?}', [HomeController::class, 'agricoltura'])->name('agricoltura');
 Route::post('/agricoltura', [HomeController::class, 'postagricoltura'])->name('postagricoltura');
@@ -75,3 +86,5 @@ Route::get('/calcoloSaldoOre', [HomeController::class, 'calcoloSaldoOre'])->name
 Route::get('/presenzecalcolo', [HomeController::class, 'presenzecalcolo'])->name('presenzecalcolo');
 
 Route::get('/sendsms', [HomeController::class, 'sendsms'])->name('sendsms');
+
+Route::post('inserisciCostoRagazzoMese', [CostoragazzoController::class, 'inserisci'])->name('inserisci_costo_ragazzo_mese');

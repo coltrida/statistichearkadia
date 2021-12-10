@@ -36,10 +36,29 @@
         @endforeach
     @endforeach
 
-    <div class="alert alert-warning mt-5 flex justify-content-between" role="alert">
-        <div>Costo Totale</div>
-        <div>{{$totale}}</div>
-    </div>
+    <form action="{{route('inserisci_costo_ragazzo_mese')}}" method="POST">
+        @csrf
+        <div class="alert alert-warning mt-5 flex justify-content-between" role="alert">
+            <div>Costo Totale</div>
+            <div id="totaleCosto">{{$totale}}</div>
+        </div>
+        <div class="alert alert-warning flex justify-content-between" role="alert">
+            <div>Co-partecipazione</div>
+            <div>
+                <input type="number" class="form-control" id="contributo" name="contributo" aria-describedby="emailHelp">
+            </div>
+        </div>
+        <div class="alert alert-warning flex justify-content-between" role="alert">
+            <div>Saldo</div>
+            <div id="saldo"></div>
+        </div>
+        <input type="hidden" name="saldo" id="inviaSaldo">
+        <input type="hidden" name="client_id" value="{{$client->id}}">
+        <input type="hidden" name="totaleCosto" value="{{$totale}}">
+        <input type="hidden" name="mese" value="{{$mese}}">
+        <input type="hidden" name="anno" value="{{$anno}}">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Inserisci</button>
+    </form>
     {{--<div class="alert alert-warning flex justify-content-between" role="alert">
         <div>Saldo Voucher</div>
         <div>{{$client->voucher}}</div>
@@ -73,8 +92,15 @@
                             }
                         }
                     })
-            })
+            });
 
+            /*-------------- Anteprima Saldo ----------------*/
+           // let saldo = parseFloat($('#totaleCosto').html()) - parseFloat($('#contributo').val());
+            $('#contributo').on('input', function (ele) {
+                let saldo = parseFloat($('#totaleCosto').html()) - parseFloat($('#contributo').val());
+                $('#saldo').html(saldo);
+                $('#inviaSaldo').val(saldo);
+            });
 
         });
     </script>

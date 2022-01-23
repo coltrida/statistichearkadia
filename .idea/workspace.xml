@@ -2,19 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58d740cb-1f2f-4c1a-8bd9-e581c1832889" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statistichearkadia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistichearkadia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PrimanotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PrimanotaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/PrimaNotaService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PrimaNotaService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup Sql1398890_3.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/visualizza.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_10_151527_create_primanotas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_12_10_151527_create_primanotas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/inserisciEntrata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/inserisciEntrata.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/inserisciUscita.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/inserisciUscita.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/ricevuta.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/ricevuta.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/saldoMese.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/saldoMese.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +205,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/primaNota" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -206,16 +213,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\public\css" />
-      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\layouts" />
       <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\primaNota" />
       <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\statistiche" />
       <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\resources\views\sms" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\chilometri" />
-      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\vettura" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\public\css" />
+      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -367,7 +374,21 @@
       <workItem from="1631807768933" duration="165000" />
       <workItem from="1637405104882" duration="12000" />
       <workItem from="1639147295516" duration="1151000" />
-      <workItem from="1639148491753" duration="13443000" />
+      <workItem from="1639148491753" duration="16023000" />
+      <workItem from="1639219080353" duration="4048000" />
+      <workItem from="1639755751066" duration="889000" />
+      <workItem from="1641224045221" duration="1364000" />
+      <workItem from="1641384017615" duration="4397000" />
+      <workItem from="1641462780816" duration="6013000" />
+      <workItem from="1641554459117" duration="1464000" />
+      <workItem from="1641557111739" duration="210000" />
+      <workItem from="1641756250857" duration="3159000" />
+      <workItem from="1642076852986" duration="1383000" />
+      <workItem from="1642102072647" duration="28000" />
+      <workItem from="1642148817532" duration="11000" />
+      <workItem from="1642445167390" duration="1263000" />
+      <workItem from="1642493767958" duration="699000" />
+      <workItem from="1642966746236" duration="3519000" />
     </task>
     <servers />
   </component>
@@ -380,10 +401,15 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1639160132974">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="2290" y="252" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1641465071747">
+      <screen x="1920" y="0" width="1280" height="994" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1639160132974" />
+    <state x="2290" y="252" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834/1920.0.1280.994@1920.0.1280.994" timestamp="1641465071747" />
+    <state x="2119" y="132" key="FileChooserDialogImpl" timestamp="1642497087074">
+      <screen x="1920" y="0" width="1280" height="994" />
+    </state>
+    <state x="2119" y="132" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1280.994@1920.0.1280.994" timestamp="1642497087074" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1641763783061" />
     <state x="546" y="232" key="NewPhpClassDialog" timestamp="1639151824515">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

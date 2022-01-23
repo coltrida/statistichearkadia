@@ -1,7 +1,13 @@
-@extends('layouts.stile')
+@extends('layouts.ricevutaStile')
 
 @section('content')
-    <div class="bg-white p-6">
+    <div class="bg-white p-6" style="height: 600px">
+        <h3>Arkadia Onlus</h3>
+        <h5>via G. La Pira, 24</h5>
+        <h5>52028 Terranuova Bracciolini (AR)</h5>
+        <h5>Cod. Fisc. e P. iva 90025750515</h5>
+        <h5>pec: arkadiaonlus@pec.it</h5>
+        <br><br>
         <div class="card">
             <div class="card-header">
                 <div class="row">

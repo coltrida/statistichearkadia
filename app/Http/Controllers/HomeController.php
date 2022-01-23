@@ -15,6 +15,7 @@ use App\Models\User;
 use App\Services\AgricolturaService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Nexmo\Laravel\Facade\Nexmo;
 use function compact;
 use function dd;
@@ -319,61 +320,11 @@ class HomeController extends Controller
         return view('log.index', compact('logs'));
     }
 
-    public function calcoloSaldoOre()
-    {
-        $oggi = Carbon::now();
-        $settimanaAttuale = $oggi->weekOfYear;
-        $settimanaLindaAssunzione = Carbon::make('06/06/2021')->weekOfYear;
-        $operatori = User::with('presenze')->get();
-        foreach ($operatori as $operatore)
-        {
-            if ($operatore-> id == 18){
-                $settimanaAttuale = $settimanaAttuale - $settimanaLindaAssunzione;
-            }
-            if($operatore->oresettimanali)
-            {
-                $totaleOreAttese = $settimanaAttuale * $operatore->oresettimanali;
-                $totaleOreLavorate = 0;
-                foreach ($operatore->presenze as $presenza)
-                {
-                    $totaleOreLavorate += $presenza->ore;
-                }
-                $operatore->oresaldo = $totaleOreAttese - $totaleOreLavorate;
-                $operatore->save();
-            }
-        }
-        $primoGiornoDelMese = $oggi->firstOfMonth();
-        if ($oggi->format('Y-m-d') === $primoGiornoDelMese->format('Y-m-d')){
-            $totEntrateMese = Primanota::where([
-                ['anno', $oggi->year],
-                ['mese', $oggi->month],
-                ['tipo', 'entrate'],
-            ])->sum('importo');
-
-            $totUsciteMese = Primanota::where([
-                ['anno', $oggi->year],
-                ['mese', $oggi->month],
-                ['tipo', 'uscite'],
-            ])->sum('importo');
-
-            $saldo = $totEntrateMese - $totUsciteMese;
-
-            Primanota::create([
-                'importo' => $saldo < 0 ? -$saldo : $saldo,
-                'causale' => 'Saldo mese precedente',
-                'anno' => $oggi->year,
-                'mese' => $oggi->month,
-                'tipo' => $saldo < 0 ? 'uscita' : 'entrata',
-            ]);
-        }
-        return redirect()->back();
-    }
-
     public function presenzecalcolo()
     {
         $settimanaAttuale = Carbon::now()->weekOfYear;
         $operatore = User::with('presenze')->where('name', 'Manuela')->first();
-//dd($operatore);
+
             if($operatore->oresettimanali)
             {
                 $totaleOreAttese = $settimanaAttuale * $operatore->oresettimanali;

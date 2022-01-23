@@ -53,6 +53,25 @@ class PrimaNotaService
             ['anno', $anno],
         ])->latest()->paginate(10);
 
-        return [$ele, $anno, $mese];
+        $sommaEntrate = Primanota::where([
+            ['mese', $mese],
+            ['anno', $anno],
+            ['tipo', 'entrata'],
+        ])->sum('importo');
+
+        $sommaUscite = Primanota::where([
+            ['mese', $mese],
+            ['anno', $anno],
+            ['tipo', 'uscita'],
+        ])->sum('importo');
+
+        $saldo = $sommaEntrate - $sommaUscite;
+
+        return [$ele, $anno, $mese, $sommaEntrate, $sommaUscite, $saldo];
+    }
+
+    public function elimina(Primanota $primanota)
+    {
+        return $primanota->delete();
     }
 }

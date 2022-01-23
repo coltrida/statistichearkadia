@@ -45,4 +45,12 @@ class PrimanotaController extends Controller
     {
         return view('primaNota.ricevuta', compact('primanota'));
     }
+
+    public function elimina(Primanota $primanota, PrimaNotaService $primaNotaService)
+    {
+        if (!$primaNotaService->elimina($primanota)){
+            return redirect()->back()->withMessage('Errore eliminazione');
+        }
+        return redirect()->back()->withMessage('Eliminazione effettuata');
+    }
 }

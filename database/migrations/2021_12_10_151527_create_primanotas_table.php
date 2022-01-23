@@ -18,7 +18,7 @@ class CreatePrimanotasTable extends Migration
             $table->float('importo');
             $table->string('causale');
             $table->string('progressivo')->nullable();
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->nullable();
             $table->integer('anno');
             $table->integer('mese');
             $table->string('tipo');

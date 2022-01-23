@@ -51,14 +51,14 @@
                         </form>
                     </li>
                 @else
-                    <li class="nav-item active">
+                    {{--<li class="nav-item active">
                         <a href="{{ route('login') }}" class="nav-link" style="color: whitesmoke">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item active">
                             <a href="{{ route('register') }}" class="nav-link" style="color: whitesmoke">Register</a>
                         </li>
-                    @endif
+                    @endif--}}
 
             </ul>
 
@@ -73,8 +73,11 @@
     </main>
 </div>
     <footer class="footer py-3 bg-dark">
-        <div class="container">
+        <div class="container flex justify-content-between">
             <span class="text-muted">ArkadiaOnlus</span>
+            @if(auth()->user()->isAdmin())
+                <span class="text-muted"><a href="{{route('register')}}">Registra User</a></span>
+            @endif
         </div>
     </footer>
 

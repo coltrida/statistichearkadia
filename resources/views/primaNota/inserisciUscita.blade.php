@@ -33,7 +33,7 @@
             <div class="row ">
                 <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12 form-group">
                     <label for="importo" class="text-white">Importo</label>
-                    <input type="number" required class="form-control" id="importo" name="importo" aria-describedby="emailHelp">
+                    <input type="number" step=".1" required class="form-control" id="importo" name="importo" aria-describedby="emailHelp">
                 </div>
                 <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12 col-xs-12 form-group">
                     <label for="tipo" class="text-white">Causale</label>

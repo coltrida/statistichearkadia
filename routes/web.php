@@ -5,6 +5,7 @@ use App\Http\Controllers\AssociaController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CostoragazzoController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresenzeController;
 use App\Http\Controllers\PrimanotaController;
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'inizio'])->name('inizio');
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/migrate', function (){
+    \Illuminate\Support\Facades\Artisan::call('migrate --path=/database/migrations/2021_12_10_151527_create_primanotas_table.php');
+});
 
 // --------------------- attività --------------------------
 Route::get('/inserisciattivita', [ActivityController::class, 'index'])->name('attivita');
@@ -65,6 +70,7 @@ Route::get('/inserisciEntrata', [PrimanotaController::class, 'entrata'])->name('
 Route::post('/inserisciEntrata', [PrimanotaController::class, 'inserisciEntrata'])->name('inserisci_entrata');
 Route::get('/saldoMese/{direzione}', [PrimanotaController::class, 'saldoMese'])->name('saldo_mese');
 Route::get('/ricevuta/{primanota}', [PrimanotaController::class, 'ricevuta'])->name('ricevuta');
+Route::get('/eliminaPrimanota/{primanota}', [PrimanotaController::class, 'elimina'])->name('eliminaPrimanota');
 
 // --------------------- statistiche --------------------------
 Route::get('/statistiche', [HomeController::class, 'statistiche'])->name('statistiche');
@@ -82,8 +88,9 @@ Route::get('/agricoltura/{giorno}/{id?}', [HomeController::class, 'agricoltura']
 Route::post('/agricoltura', [HomeController::class, 'postagricoltura'])->name('postagricoltura');
 Route::get('/eliminaagricoltura/{id}', [HomeController::class, 'eliminaagricola'])->name('eliminaagricola');
 
-Route::get('/calcoloSaldoOre', [HomeController::class, 'calcoloSaldoOre'])->name('calcoloSaldoOre');
+Route::get('/calcoloSaldoOre', [FrontController::class, 'calcoloSaldoOre'])->name('calcoloSaldoOre');
 Route::get('/presenzecalcolo', [HomeController::class, 'presenzecalcolo'])->name('presenzecalcolo');
+Route::get('/controllo', [FrontController::class, 'controllo'])->name('controllo');
 
 Route::get('/sendsms', [HomeController::class, 'sendsms'])->name('sendsms');
 

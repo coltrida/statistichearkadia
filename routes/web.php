@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/migrate', function (){
-    \Illuminate\Support\Facades\Artisan::call('migrate --path=/database/migrations/2021_12_10_151527_create_primanotas_table.php');
+    \Illuminate\Support\Facades\Artisan::call('migrate --path=/database/migrations/2022_04_27_193446_add_giorno_to_primanota.php');
 });
 
 // --------------------- attività --------------------------

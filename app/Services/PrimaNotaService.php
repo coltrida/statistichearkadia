@@ -13,19 +13,22 @@ class PrimaNotaService
 {
     public function inserisciUscita($request)
     {
+        $giorno = Carbon::make($request->giorno);
         return Primanota::create([
             'importo' => $request->importo,
             'causale' => $request->causale,
             'user_id' => Auth::user()->id,
-            'anno' => Carbon::now()->year,
-            'mese' => Carbon::now()->month,
+            'anno' => $giorno->year,
+            'mese' => $giorno->month,
+            'giorno' => $giorno,
             'tipo' => 'uscita',
         ]);
     }
 
     public function inserisciEntrata($request)
     {
-        $annoAttuale = Carbon::now()->year;
+        $giorno = Carbon::make($request->giorno);
+        $annoAttuale = $giorno->year;
         $progressivo = Primanota::where([
             ['anno', $annoAttuale],
             ['tipo', 'entrata'],
@@ -35,8 +38,9 @@ class PrimaNotaService
             'importo' => $request->importo,
             'causale' => $request->causale,
             'user_id' => Auth::user()->id,
-            'anno' => Carbon::now()->year,
-            'mese' => Carbon::now()->month,
+            'anno' => $annoAttuale,
+            'mese' => $giorno->month,
+            'giorno' => $giorno,
             'tipo' => 'entrata',
             'progressivo' => (int)$progressivo + 1,
             'fornitore' => $request->fornitore,
@@ -51,7 +55,7 @@ class PrimaNotaService
         $ele = Primanota::with('user')->where([
             ['mese', $mese],
             ['anno', $anno],
-        ])->latest()->paginate(10);
+        ])->orderBy('giorno', 'DESC')->paginate(10);
 
         $sommaEntrate = Primanota::where([
             ['mese', $mese],

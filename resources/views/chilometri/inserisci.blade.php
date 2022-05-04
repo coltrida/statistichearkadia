@@ -140,7 +140,7 @@
                             '_token' : $('#_token').val()
                         },
                         complete : function (resp) {
-                            console.log(resp);        //COSì POSSIAMO VEDERE IL VALORE ( = 1) NELLA CONSOLE DEL BROWSER
+                            //console.log(resp);        //COSì POSSIAMO VEDERE IL VALORE ( = 1) NELLA CONSOLE DEL BROWSER
                             if(resp.responseText == 1){
                                 //alert(resp.responseText);
                                 $( "#"+id ).remove();

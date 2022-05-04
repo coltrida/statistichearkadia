@@ -39,18 +39,22 @@
         </div>
 
         <div class="alert alert-danger mt-5 flex justify-content-between p-0" role="alert">
+            <div class="col-1 py-2">Data</div>
             <div class="col-3 py-2">Causale</div>
-            <div class="col-3 py-2">Entrate</div>
-            <div class="col-3 py-2">Uscite</div>
+            <div class="col-2 py-2">Entrate</div>
+            <div class="col-2 py-2">Uscite</div>
+            <div class="col-2 py-2">Eseguito</div>
             <div class="col-2 py-2"></div>
         </div>
 
         @foreach($items[0] as $item)
             <div class="alert alert-primary mt-2 flex justify-content-between align-items-center p-0" role="alert">
 
+                <div class="col-1 py-2">{{$item->giorno ? \Carbon\Carbon::make($item->giorno)->format('d/m') : null}}</div>
                 <div class="col-3 py-2">{{$item->causale}}</div>
-                <div class="col-3 py-2">{{$item->tipo === 'entrata' ? $item->importo : null}}</div>
-                <div class="col-3 py-2">{{$item->tipo === 'uscita' ? $item->importo : null}}</div>
+                <div class="col-2 py-2">{{$item->tipo === 'entrata' ? $item->importo : null}}</div>
+                <div class="col-2 py-2">{{$item->tipo === 'uscita' ? $item->importo : null}}</div>
+                <div class="col-2 py-2">{{$item->fornitore}}</div>
 
                 <div class="col-2 py-2">
                     @if($item->tipo === 'entrata' && $item->user_id)
@@ -69,10 +73,11 @@
             </div>
         @endforeach
         <div class="alert alert-primary mt-2 flex justify-content-between align-items-center p-0 font-weight-bold" role="alert">
+            <div class="col-2 py-2"></div>
             <div class="col-3 py-2">TOTALI</div>
-            <div class="col-3 py-2">{{$items[3]}}</div>
-            <div class="col-3 py-2">{{$items[4]}}</div>
-            <div class="col-2 py-2">
+            <div class="col-2 py-2">{{$items[3]}}</div>
+            <div class="col-2 py-2">{{$items[4]}}</div>
+            <div class="col-3 py-2">
             </div>
         </div>
         <div class="alert alert-danger mt-2 flex justify-content-between" role="alert">

@@ -69,18 +69,27 @@ class FrontController extends Controller
     private function calcoloSaldoMensilePrimaNota()
     {
         $primoGiornoDelMese = Carbon::now()->firstOfMonth();
+        $orarioAttuale = Carbon::now()->hour;
+        $orario = 02;
+       // $primoGiornoDelMese = Carbon::now();
         $oggi = Carbon::now();
-
-        if ($oggi->format('Y-m-d') === $primoGiornoDelMese->format('Y-m-d')){
+        echo 'Il primo del mese è: '.$primoGiornoDelMese->format('Y-m-d').' <br>';
+        echo 'oggi è: '.$oggi->format('Y-m-d').' <br>';
+        echo 'orario di calcolo saldo : '.$orario.' <br>';
+        echo 'orario attuale : '.$orarioAttuale;
+        if (
+            ($oggi->format('Y-m-d') === $primoGiornoDelMese->format('Y-m-d')) &&
+            ($orario === $orarioAttuale)
+        ){
             $totEntrateMese = Primanota::where([
                 ['anno', $oggi->year],
-                ['mese', $oggi->month],
+                ['mese', $oggi->month-1],
                 ['tipo', 'entrata'],
             ])->sum('importo');
 
             $totUsciteMese = Primanota::where([
                 ['anno', $oggi->year],
-                ['mese', $oggi->month],
+                ['mese', $oggi->month-1],
                 ['tipo', 'uscita'],
             ])->sum('importo');
             $saldo = $totEntrateMese - $totUsciteMese;

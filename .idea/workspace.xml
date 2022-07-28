@@ -3,13 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="58d740cb-1f2f-4c1a-8bd9-e581c1832889" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/PrimaNotaService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PrimaNotaService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chilometri/inserisci.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chilometri/inserisci.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/inserisciEntrata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/inserisciEntrata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/inserisciUscita.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/inserisciUscita.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/primaNota/saldoMese.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/primaNota/saldoMese.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistiche/visualizzachilometri.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistiche/visualizzachilometri.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Agricoltura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Agricoltura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/AgricolturaService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/AgricolturaService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agricoltura/index2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agricoltura/index2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/stile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +24,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,14 +39,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/PresenzeController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TripController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/StatisticheController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/Models/User.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/Http/Resources/TripClientResource.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ActivityController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TripController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/StatisticheController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Resources/TripClientResource.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Api/PresenzeController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Models/User.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -186,7 +189,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -202,13 +204,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\layouts" />
-      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\primaNota" />
-      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\statistiche" />
-      <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\resources\views\sms" />
-      <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\resources\views\chilometri" />
+      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\agricoltura" />
+      <recent name="C:\Users\dcolt\code\statistichearkadia\public\js" />
+      <recent name="C:\Users\dcolt\code\statistichearkadia\public\css" />
+      <recent name="C:\Users\dcolt\code\statistichearkadia\public" />
+      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\calendario" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dcolt\code\statistichearkadia\resources\views\calendario" />
       <recent name="C:\Users\coltridacasa\Documents\projects\LARAPROJECTS\Statistichearkadia\public\css" />
       <recent name="C:\Users\coltrida\Documents\projects\LARAPROJECTS\statistichearkadia\public\css" />
     </key>
@@ -391,12 +394,24 @@
       <workItem from="1651242180614" duration="983000" />
       <workItem from="1651309243459" duration="9000" />
       <workItem from="1651521303604" duration="36000" />
-      <workItem from="1651658329738" duration="1731000" />
+      <workItem from="1651658329738" duration="2398000" />
+      <workItem from="1651684529585" duration="1976000" />
+      <workItem from="1651740871268" duration="4652000" />
+      <workItem from="1651759708247" duration="608000" />
+      <workItem from="1651863078814" duration="38449000" />
+      <workItem from="1652080612132" duration="9946000" />
+      <workItem from="1652439898589" duration="627000" />
+      <workItem from="1652470230135" duration="26000" />
+      <workItem from="1652642173621" duration="9622000" />
+      <workItem from="1654969271685" duration="177000" />
+      <workItem from="1656695825829" duration="8000" />
+      <workItem from="1658947179948" duration="5292000" />
+      <workItem from="1659033153576" duration="1746000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -404,11 +419,15 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1651309251549">
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1652642881355">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1652642881355" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1658949521540">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1280.994@0.0.1536.834" timestamp="1651309251549" />
-    <state x="2119" y="132" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1280.994@1920.0.1280.994" timestamp="1646317737873" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1647019136965" />
+    <state x="2119" y="132" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1280.994@1920.0.1280.994" timestamp="1654969448893" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1658949521540" />
   </component>
 </project>

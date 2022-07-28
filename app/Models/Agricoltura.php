@@ -10,10 +10,16 @@ class Agricoltura extends Model
     use HasFactory;
 
     protected $table = 'agricolturas';
+    protected $appends = ['presenza'];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'user_id', 'id');
     }
 
     public function getPresenzaAttribute()

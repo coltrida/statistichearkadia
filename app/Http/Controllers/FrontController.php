@@ -103,4 +103,9 @@ class FrontController extends Controller
             ]);
         }
     }
+
+    public function calendario()
+    {
+        return view('calendario.index');
+    }
 }

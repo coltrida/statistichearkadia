@@ -68,4 +68,29 @@ class AgricolturaService
             $presenza->save();
         }
     }
+
+    public function listaAgricoltura($mese, $anno)
+    {
+        return Agricoltura::with('client')->where([
+            ['anno', $anno],
+            ['mese', $mese]
+        ])
+            ->orderBy('giorno')
+            ->get();
+    }
+
+    public function salvaAgricoltura($request)
+    {
+        foreach ($request->giorno as $value){
+            $presenza = new Agricoltura();
+            $presenza->user_id = $request->utente;
+            $presenza->giorno = Carbon::make($value['id'])->format('d/m/Y');
+            $presenza->settimana = Carbon::make($value['id'])->weekOfMonth;
+            $presenza->mese = Carbon::make($value['id'])->month;
+            $presenza->anno = Carbon::make($value['id'])->year;
+            $presenza->tipo = $request->tipologia;
+
+            $presenza->save();
+        }
+    }
 }

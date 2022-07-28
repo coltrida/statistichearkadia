@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Api\ActivityController;
+use App\Http\Controllers\Api\AgricolturaController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\PresenzeController;
+use App\Http\Controllers\Api\PrimanotaController;
 use App\Http\Controllers\Api\StatisticheController;
 use App\Http\Controllers\Api\TripController;
 use App\Http\Controllers\Api\UserController;
@@ -57,6 +59,7 @@ Route::delete('/chilometri/{trip}', [TripController::class, 'elimina']);
 /*--------------- Operatori -----------------*/
 Route::get('/operatori', [UserController::class, 'index']);
 Route::post('/operatori/associaOre', [UserController::class, 'eseguiassociaoperatoreore']);
+Route::post('/operatori/inserisci', [UserController::class, 'salvaoperatore']);
 
 /*--------------- Statistiche -----------------*/
 Route::post('/statistiche/presenzeRagazzi', [StatisticheController::class, 'presenzeRagazzi']);
@@ -70,3 +73,16 @@ Route::get('/statistiche/listaSettimane', [StatisticheController::class, 'listaS
 
 /*--------------- logs -----------------*/
 Route::get('/logs', [UserController::class, 'logs']);
+
+/*--------------- Prima Nota -----------------*/
+Route::post('/inserisciUscita', [PrimanotaController::class, 'inserisciUscita']);
+Route::post('/inserisciEntrata', [PrimanotaController::class, 'inserisciEntrata']);
+Route::get('/saldoMese/{direzione}', [PrimanotaController::class, 'saldoMese']);
+Route::delete('/eliminaPrimanota/{primanota}', [PrimanotaController::class, 'eliminaPrimanota']);
+
+// --------------------- agricoltura --------------------------
+Route::get('/primoDelMese', [AgricolturaController::class, 'primoDelMese']);
+Route::get('/agricoltura/{giorno}/{id?}', [AgricolturaController::class, 'agricoltura']);
+Route::get('/agricolturaMeseAnno/{mese}/{anno}', [AgricolturaController::class, 'agricolturaMeseAnno']);
+Route::post('/agricoltura', [AgricolturaController::class, 'postagricoltura']);
+Route::get('/eliminaagricoltura/{id}', [AgricolturaController::class, 'eliminaagricola']);

@@ -18,6 +18,14 @@ class AuthController extends Controller
         /*if (Hash::check($request->password, $user->password)) {
             return $user;
         }*/
+
+        if (!$user){
+            return 'Utente non presente';
+        }
+
+        if (! Hash::check($request->password, $user->password)) {
+            return 'password errata';
+        }
         return $user;
     }
 

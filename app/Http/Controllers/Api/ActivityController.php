@@ -38,7 +38,7 @@ class ActivityController extends Controller
 
     public function attivitaCliente()
     {
-        $items = AttivitaCliente::with('client', 'activity')->latest()->take(100)->get();
+        $items = AttivitaCliente::with('client', 'activity')->latest()->take(50)->get();
         return ActivityClientResource::collection($items);
     }
 
@@ -55,6 +55,8 @@ class ActivityController extends Controller
         $mese = $d["month"];
         $anno = $d["year"];
 
+        $costoAttivita = Activity::find($request->attivita)->cost * $request->quantita;
+
         $elementiInseriti = [];
 
         foreach ($request->raga as $ragazzo){
@@ -64,7 +66,7 @@ class ActivityController extends Controller
             $inserimento->activity_id = $request->attivita;
             $inserimento->client_id = $ragazzo;
             $inserimento->quantita = $request->quantita;
-            $inserimento->costo = $request->costo;
+            $inserimento->costo = $costoAttivita;
             $inserimento->giorno = $date;
             $inserimento->mese = $mese;
             $inserimento->anno = $anno;
@@ -104,6 +106,6 @@ class ActivityController extends Controller
     public function attivitaragazzi(Activity $activity)
     {
         //dd($activity->clientsAssocia->toArray());
-        return $activity->clientsAssocia->toArray();
+        return $activity->clientsAssocia->pluck('id')->toArray();
     }
 }

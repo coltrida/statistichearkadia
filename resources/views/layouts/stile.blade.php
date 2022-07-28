@@ -74,7 +74,9 @@
 </div>
     <footer class="footer py-3 bg-dark">
         <div class="container flex justify-content-between">
-            <span class="text-muted">ArkadiaOnlus</span>
+            <span class="text-muted">
+                <a href="{{route('calendario')}}">Calendario</a>
+            </span>
             @if(auth()->user()->isAdmin())
                 <span class="text-muted"><a href="{{route('register')}}">Registra User</a></span>
             @endif

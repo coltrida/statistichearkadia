@@ -369,6 +369,28 @@ class HomeController extends Controller
         return view('agricoltura.index2', compact('settimana', 'totaleSettimaneLavorate', 'giornoInizioSecondaSettimana', 'numerodispazi', 'mese', 'lastDay', 'nrsettimane', 'persone', 'mesenumero', 'anno', 'successivo', 'precedente', 'giorno', 'utente'));
     }
 
+    public function stampa($giorno, AgricolturaService $agricolturaService, $id)
+    {
+        setlocale(LC_TIME, 'it_IT');
+        Carbon::setLocale('it');
+        $mese = $agricolturaService->nomeDelMese($giorno);
+
+        $mesenumero = $agricolturaService->numeroDelMese($giorno);
+
+        $utente = $id ? $utente = Client::with(['agricoltura' => function ($query) use($mesenumero) {
+            $query->where('mese', $mesenumero);
+        }])->find($id) : null;
+
+        $totaleSettimaneLavorate = $id ? $utente->agricoltura->where('tipo', 'P')->groupBy('settimana')->count() : null;
+
+        $anno = $agricolturaService->anno($giorno);
+        $nrsettimane = $agricolturaService->numeroSettimaneNelMese($giorno);
+
+        $settimana = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica'];
+        $lastDay = $agricolturaService->ultimoGiornoDelMese($giorno);
+        return view('agricoltura.stampa', compact('settimana', 'totaleSettimaneLavorate',  'mese', 'lastDay', 'nrsettimane', 'mesenumero', 'anno', 'giorno', 'utente'));
+    }
+
     public function postagricoltura(Request $request, AgricolturaService $agricolturaService)
     {
         $agricolturaService->salvaPresenze($request);

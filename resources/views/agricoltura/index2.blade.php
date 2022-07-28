@@ -1,7 +1,5 @@
 @extends('layouts.stile')
 
-
-
 @section('testa')
     <link href="{{ asset('css/agricoltura.css') }}" rel="stylesheet">
 @endsection
@@ -15,7 +13,8 @@
 
     <form action="{{route('postagricoltura')}}" method="post">
         @csrf
-        <select name="persona" class="form-control" id="exampleFormControlSelect1" style="width: 40%; margin: 40px">
+        <select id="users" name="persona" class="form-control" id="exampleFormControlSelect1" style="width: 40%; margin: 40px">
+                <option></option>
             @foreach($persone as $persona)
                 <option value="{{$persona->id}}">{{$persona->name}}</option>
             @endforeach
@@ -82,8 +81,10 @@
         @endfor
         <input type="hidden" name="mese" value="{{$mesenumero}}">
         <input type="hidden" name="anno" value="{{$anno}}">
-        <input type="hidden" name="giorno" value="{{$giorno}}">
-        <button type="submit" class="btn btn-primary m-3">Invia</button>
+        <input type="hidden" id="giorno" name="giorno" value="{{$giorno}}">
+        <button type="submit" class="btn btn-primary m-3">Inserisci</button>
+        <a id="btnVisualizza"  class="btn btn-warning m-3">Visualizza o elimina presenze</a>
+        <a target="_blank" id="btnStampa" class="btn btn-success m-3">Stampa</a>
     </form>
     <br>
     @if(isset($utente))
@@ -110,14 +111,26 @@
         <br>
         <h3 style="color: white">Totale Settimane lavorate: {{$totaleSettimaneLavorate}}</h3>
         <br><br>
-        <div class="row">
+        {{--<div class="row">
             <div class="col-md-8 push-2">
                 <h4 style="color: white">Firma:      _______________________________</h4>
                 <br>
                 <h4 style="color: white">Firma Tutor:__________________________</h4>
             </div>
-        </div>
-
-
+        </div>--}}
     @endif
 @endsection
+
+@section('footer')
+    @parent
+    <script>
+        $('document').ready(function () {
+            $('#users').on('change', function (evt) {
+                let idUser = this.value;
+                let giorno = $('#giorno').val();
+                $('#btnVisualizza').attr('href', '/agricoltura/'+giorno+'/'+idUser);
+                $('#btnStampa').attr('href', '/stampa/'+giorno+'/'+idUser);
+            });
+        })
+    </script>
+@stop

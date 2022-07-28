@@ -12,6 +12,7 @@ use App\Http\Controllers\PrimanotaController;
 use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', [HomeController::class, 'inizio'])->name('inizio');
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -84,7 +85,9 @@ Route::get('/statistichechilometrivetture', [HomeController::class, 'chilometriv
 Route::get('/statistichechilometriragazzi', [HomeController::class, 'chilometriragazzi'])->name('statistiche_chilometri_ragazzi');
 Route::get('/costiRagazzi', [CostoragazzoController::class, 'lista'])->name('costi_ragazzi');
 
+// --------------------- agricoltura --------------------------
 Route::get('/agricoltura/{giorno}/{id?}', [HomeController::class, 'agricoltura'])->name('agricoltura');
+Route::get('/stampa/{giorno}/{id}', [HomeController::class, 'stampa'])->name('stampa');
 Route::post('/agricoltura', [HomeController::class, 'postagricoltura'])->name('postagricoltura');
 Route::get('/eliminaagricoltura/{id}', [HomeController::class, 'eliminaagricola'])->name('eliminaagricola');
 
@@ -95,3 +98,5 @@ Route::get('/controllo', [FrontController::class, 'controllo'])->name('controllo
 Route::get('/sendsms', [HomeController::class, 'sendsms'])->name('sendsms');
 
 Route::post('inserisciCostoRagazzoMese', [CostoragazzoController::class, 'inserisci'])->name('inserisci_costo_ragazzo_mese');
+
+Route::get('/calendario', [FrontController::class, 'calendario'])->name('calendario');
